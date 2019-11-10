@@ -1,6 +1,6 @@
 {
   "name": "vuex-saga-ts",
-  "version": "0.1.0",
+  "version": "0.20.0",
   "description": "Nothing but a simple plugin connecting redux-saga in ts with some utils",
   "main": "index.ts",
   "types": "./vuex-saga-ts.d.ts",
@@ -9,11 +9,15 @@
     "build:es2016": "tsc",
     "build:copy-files": "node ./scripts/copy-files.js",
     "build": "yarn prebuild && yarn build:es2016 && yarn build:copy-files",
+    "release": "yarn build && npm publish build --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@albertli90.com:9022/home-group/vuex-saga-ts.git"
+    "url": "git@github.com:albertleigh/vuex-saga-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/albertleigh/vuex-saga-ts/issues"
   },
   "keywords": [
     "vuex",
