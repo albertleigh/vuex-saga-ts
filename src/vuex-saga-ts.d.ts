@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import {SagaDispatchActionFun, SagaDispatchFun} from "vuex-saga-ts";
+import {SagaDispatchActionFun, SagaDispatchFun} from "./types";
 
 declare module '@vue/composition-api/dist/component/component' {
     interface SetupContext {
@@ -13,3 +13,15 @@ declare module 'vuex' {
         sagaDispatchAction:SagaDispatchActionFun;
     }
 }
+
+export {
+    SagaList, SagaTree, MappedSagaMethodMap, Action, SagaDispatchFun, SagaDispatchActionFun
+
+} from './types'
+
+export {default as createAction} from './createAction';
+
+export {
+    mapSagaActions,
+    VuexSaga as VuexSagaPlugin,
+} from './VuexSaga'
