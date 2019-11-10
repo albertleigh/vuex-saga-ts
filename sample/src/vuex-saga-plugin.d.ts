@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import {SagaDispatchActionFun, SagaDispatchFun} from "@/utils/types";
+import {SagaDispatchActionFun, SagaDispatchFun} from "vuex-saga-ts";
 
 declare module '@vue/composition-api/dist/component/component' {
     interface SetupContext {

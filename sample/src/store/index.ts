@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex, { Store } from 'vuex'
 
-import { VuexSaga } from '@/utils/VuexSaga';
+import { VuexSagaPlugin } from 'vuex-saga-ts';
 
 import { IRootState } from './types';
 
@@ -16,7 +16,7 @@ const store:Store<IRootState> = new Vuex.Store({
     version: '1.0.0',
   },
   plugins:[
-      VuexSaga(rootSaga )
+    VuexSagaPlugin(rootSaga )
   ],
   modules:{
     application

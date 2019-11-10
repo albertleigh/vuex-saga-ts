@@ -1,5 +1,5 @@
 import { ActionTree } from 'vuex';
-import createAction from '@/utils/createAction'
+import { createAction } from 'vuex-saga-ts'
 
 import { IApplicationState } from './types';
 import { IRootState } from '../types';

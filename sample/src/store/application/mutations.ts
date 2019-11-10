@@ -1,5 +1,5 @@
 import { MutationTree } from 'vuex';
-import createAction from '@/utils/createAction'
+import { createAction } from 'vuex-saga-ts'
 
 import { IApplicationState } from './types';
 
