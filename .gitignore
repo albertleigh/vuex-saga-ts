@@ -1,13 +1,11 @@
 .DS_Store
 node_modules
-/dist
+dist/
+build/
 
 # local env files
 .env.local
 .env.*.local
-
-# lock files
-yarn.lock
 
 # Test coverage
 coverage/

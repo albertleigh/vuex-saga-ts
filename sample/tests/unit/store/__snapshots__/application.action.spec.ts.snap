@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Application actions act creators start: application_saga_act_start 1`] = `
+Object {
+  "payload": Object {},
+  "type": "APPLICATION_START",
+}
+`;
+
+exports[`Application actions act creators start: application_saga_act_start_name 1`] = `"APPLICATION_START"`;
