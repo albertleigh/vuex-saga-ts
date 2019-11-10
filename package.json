@@ -1,0 +1,22 @@
+{
+  "name": "@albertli90/vuex-saga-ts",
+  "version": "0.1.0",
+  "description": "Nothing but a plugin connecting saga in ts with some utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@albertli90.com:9022/home-group/vuex-saga-ts.git"
+  },
+  "keywords": [
+    "albertli90"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "redux-saga": "^1.1.3",
+    "vuex": "^3.1.1"
+  }
+}

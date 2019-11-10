@@ -6,6 +6,9 @@ node_modules
 .env.local
 .env.*.local
 
+# lock files
+yarn.lock
+
 # Test coverage
 coverage/
 
