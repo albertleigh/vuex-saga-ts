@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2015",
+    "strict": true,
+    "alwaysStrict": true,
+    "outDir": "./build",
+    "declaration": true,
+    "declarationDir": "./build",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strictPropertyInitialization": false,
+    "noStrictGenericChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "config",
+    "scripts",
+    "acceptance-tests",
+    "./src/**/__mocks__/",
+    "./src/**/__tests__/",
+    "./src/**/*.spec.ts",
+    "./src/**/*.test.ts"
+  ]
+}
