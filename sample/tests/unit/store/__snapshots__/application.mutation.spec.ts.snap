@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Application mutations act creators ready: application_mut_act_ready 1`] = `
+Object {
+  "payload": Object {},
+  "type": "APPLICATION_READY",
+}
+`;
+
+exports[`Application mutations act creators ready: application_mut_act_ready_name 1`] = `"APPLICATION_READY"`;
+
+exports[`Application mutations mutator ready: after ready mutator 1`] = `
+Object {
+  "loading": false,
+}
+`;
+
+exports[`Application mutations mutator ready: before ready mutator 1`] = `
+Object {
+  "loading": true,
+}
+`;

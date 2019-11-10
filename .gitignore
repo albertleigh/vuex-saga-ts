@@ -7,9 +7,6 @@ build/
 .env.local
 .env.*.local
 
-# lock files
-yarn.lock
-
 # Test coverage
 coverage/
 
