@@ -46,11 +46,25 @@ export default store;
 ``` 
 
 - Since veux-saga-ts extends the default Store type of vuex, a type definition file is suggested created at your 
-project root to extends the types
+project root to extends vuex store types. Along with it, the temp composition api extension definition are also suggested.
 
 *src/vuex-saga-ts.d.ts*
 ```typescript
-/// <reference types="vuex-saga-ts" />
+import Vue from 'vue';
+import {SagaDispatchActionFun, SagaDispatchFun} from "vuex-saga-ts";
+
+declare module '@vue/composition-api/dist/component/component' {
+    interface SetupContext {
+        readonly refs: { [key: string]: Vue | Element | Vue[] | Element[] };
+    }
+}
+
+declare module 'vuex' {
+    interface Store<S>{
+        sagaDispatch:SagaDispatchFun;
+        sagaDispatchAction:SagaDispatchActionFun;
+    }
+}
 ``` 
 
 ### Usage
@@ -201,5 +215,5 @@ crisis of handling changing requirements in my previous projects.
 
 [LICENSE]: ./LICENSE.md
 [CHANGELOG]: ./CHANGELOG.md
-[version-badge]: https://img.shields.io/badge/version-0.20.0-blue.svg
+[version-badge]: https://img.shields.io/badge/version-0.20.1-blue.svg
 [license-badge]: https://img.shields.io/badge/license-MIT-green.svg
