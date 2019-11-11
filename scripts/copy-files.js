@@ -50,8 +50,7 @@ async function run(){
     await Promise.all(
         [
             './README.md','./CHANGELOG.md','./LICENSE.md',
-            './src/createAction.js','./src/createAction.d.ts',
-            './src/vuex-saga-ts.d.ts'
+            './src/createAction.js','./src/createAction.d.ts'
         ].map(file => copyFile(file)),
     );
     const packageData = await createPackageFile();
