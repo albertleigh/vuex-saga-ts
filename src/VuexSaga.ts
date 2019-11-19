@@ -59,8 +59,14 @@ export function VuexSaga<
     return (store:Store<State>) => {
         const channel = stdChannel();
         // eslint-disable-next-line no-param-reassign
-        (store as any ).sagaDispatch = (type, payload={}) => channel.put({ type, payload });
-        (store as any ).sagaDispatchAction = (action:Action) => channel.put(action);
+        (store as any ).sagaDispatch = (type, payload={}) => {
+            store.commit({ type, payload });
+            return channel.put({ type, payload })
+        };
+        (store as any ).sagaDispatchAction = (action:Action) =>{
+            store.commit(action);
+            return channel.put(action)
+        };
         runSaga(
             {
                 channel,
