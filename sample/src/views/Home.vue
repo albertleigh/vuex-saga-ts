@@ -28,7 +28,9 @@ export default createComponent({
   },
   setup(){
     const {
-      loading,
+      state:{
+        loading
+      },
       actions:{start}
     } = compzApplicatoinCtx();
 
