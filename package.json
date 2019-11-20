@@ -1,6 +1,6 @@
 {
   "name": "vuex-saga-ts",
-  "version": "0.20.1",
+  "version": "0.20.2",
   "description": "Nothing but a simple plugin connecting redux-saga in ts with some utils",
   "main": "index.ts",
   "scripts": {
