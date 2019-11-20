@@ -23,6 +23,9 @@
 - Then init and inject it with the root saga function as one vuex plugin when you create vuex. And leave the work to 
 the root saga to clear.
 
+- If needed, we can set `dispatchSagaAction` to true at the second argument option to dispatch saga actions into mutations,
+like `VuexSagaPlugin(rootSaga, {dispatchSagaAction:true})`, by default it is disabled. 
+
 *src/store/index.ts*
 ```typescript
 import Vue from 'vue'
@@ -132,7 +135,8 @@ import { SagaActions } from '@/store/application'
 import { mainStoreInjector } from './MainStore'
 import {IApplicationState} from "@/store/application/types";
 
-interface IApplicaitonCtx extends IApplicationState{
+interface IApplicaitonCtx {
+    state:IApplicationState,
     actions:{
         start:()=>void;
     }
@@ -145,7 +149,7 @@ export function compzApplicatoinCtx():IApplicaitonCtx{
 
     return {
         // @ts-ignore
-        ...toRefs(applicationsState),
+        state:toRefs(applicationsState),
         actions:{
             start: ()=>{store.sagaDispatchAction(SagaActions.start())}
         }
