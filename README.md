@@ -215,5 +215,5 @@ crisis of handling changing requirements in my previous projects.
 
 [LICENSE]: ./LICENSE.md
 [CHANGELOG]: ./CHANGELOG.md
-[version-badge]: https://img.shields.io/badge/version-0.20.1-blue.svg
+[version-badge]: https://img.shields.io/badge/version-0.20.2-blue.svg
 [license-badge]: https://img.shields.io/badge/license-MIT-green.svg

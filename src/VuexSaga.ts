@@ -38,6 +38,10 @@ export function mapSagaActions(actions:SagaTree):MappedSagaMethodMap {
     return res;
 }
 
+interface ExtSagaOption<Action,State> extends RunSagaOptions<Action,State> {
+    dispatchSagaAction:boolean;
+}
+
 /**
  * Main plugin function
  *
@@ -53,14 +57,21 @@ export function VuexSaga<
     S extends Saga
 >(
     saga: S,
-    options?: RunSagaOptions<Action, State>,
+    options?: ExtSagaOption<Action, State>,
     ...args: Parameters<S>
 ) {
     return (store:Store<State>) => {
         const channel = stdChannel();
+        const dispatchSagaAction = options && options.dispatchSagaAction;
         // eslint-disable-next-line no-param-reassign
-        (store as any ).sagaDispatch = (type, payload={}) => channel.put({ type, payload });
-        (store as any ).sagaDispatchAction = (action:Action) => channel.put(action);
+        (store as any ).sagaDispatch = (type, payload={}) => {
+            dispatchSagaAction && store.commit({ type, payload });
+            return channel.put({ type, payload })
+        };
+        (store as any ).sagaDispatchAction = (action:Action) =>{
+            dispatchSagaAction && store.commit(action);
+            return channel.put(action)
+        };
         runSaga(
             {
                 channel,

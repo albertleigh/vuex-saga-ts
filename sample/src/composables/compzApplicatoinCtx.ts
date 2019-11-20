@@ -5,7 +5,8 @@ import { SagaActions } from '@/store/application'
 import { mainStoreInjector } from './MainStore'
 import {IApplicationState} from "@/store/application/types";
 
-interface IApplicaitonCtx extends IApplicationState{
+interface IApplicaitonCtx{
+    state:IApplicationState,
     actions:{
         start:()=>void;
     }
@@ -18,7 +19,7 @@ export function compzApplicatoinCtx():IApplicaitonCtx{
 
     return {
         // @ts-ignore
-        ...toRefs(applicationsState),
+        state:toRefs(applicationsState),
         actions:{
             start: ()=>{store.sagaDispatchAction(SagaActions.start())}
         }
